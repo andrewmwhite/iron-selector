@@ -119,7 +119,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         // programatically select values 0 and 1 (both fire select)
         s.selectedValues = [0, 1];
-        
+
         // programatically select values 1 and 2 (2 fires select, 0 fires deselect)
         s.selectedValues = [1, 2];
 
@@ -151,16 +151,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         s.selectedValues = []
 
         // programatically select value 0
-        s.selectedValues.push(0, 1);
+        s.push('selectedValues', 0, 1);
 
         // programatically deselect value 0
-        s.selectedValues.shift();
+        s.shift('selectedValues');
 
         // programatically select value 2
-        s.selectedValues.push(2);
+        s.push('selectedValues', 2);
 
         // programatically deselect value 1
-        s.selectedValues.shift();
+        s.shift('selectedValues');
 
         assert.equal(selectEventCounters[0], 1);
         assert.equal(deselectEventCounters[0], 1);
